@@ -81,7 +81,7 @@ th {
   background-color: #e2e2e2;
 }
 
-/* Footer styles for notes and links */
+/* Footer styles for notes and the link */
 #footer {
   text-align: center;
   padding: 15px;
@@ -98,3 +98,4 @@ th {
   background-color: #fff;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 }
+
