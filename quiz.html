@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Web Server Quiz</title>
-<link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Web Server Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -22,54 +22,53 @@
 </header>
 
 <section>
-<h2>Self-Assessment Quiz</h2>
-<form id="quiz" onsubmit="return submitQuiz()">
+    <h2>Self-Assessment Quiz</h2>
+    <form id="quiz" onsubmit="return submitQuiz()">
 
-    <!-- Fill-in-the-blank question -->
-    <div class="question">
-        <label>1. The protocol used for secure web traffic is <b>______</b>.</label>
-        <input type="text" id="fillBlank" />
-    </div>
+        <!-- Fill-in-the-blank question -->
+        <div class="question">
+            <label>1. The protocol used for secure web traffic is <b>______</b>.</label>
+            <input type="text" id="fillBlank" required />
+        </div>
 
-    <!-- Multiple Choice Question 1 -->
-    <div class="question">
-        <p>2. Which port is used by default for HTTPS?</p>
-        <label><input type="radio" name="q1" value="80" /> 80</label><br>
-        <label><input type="radio" name="q1" value="443" /> 443</label><br>
-        <label><input type="radio" name="q1" value="8080" /> 8080</label>
-    </div>
+        <!-- Multiple Choice Question 1 -->
+        <div class="question">
+            <p>2. Which port is used by default for HTTPS?</p>
+            <label><input type="radio" name="q1" value="80" /> 80</label><br>
+            <label><input type="radio" name="q1" value="443" /> 443</label><br>
+            <label><input type="radio" name="q1" value="8080" /> 8080</label>
+        </div>
 
-    <!-- Multiple Choice Question 2 -->
-    <div class="question">
-        <p>3. Which server is known for high performance?</p>
-        <label><input type="radio" name="q2" value="Apache" /> Apache</label><br>
-        <label><input type="radio" name="q2" value="NGINX" /> NGINX</label><br>
-        <label><input type="radio" name="q2" value="IIS" /> IIS</label>
-    </div>
+        <!-- Multiple Choice Question 2 -->
+        <div class="question">
+            <p>3. Which server is known for high performance and event-driven architecture?</p>
+            <label><input type="radio" name="q2" value="Apache" /> Apache</label><br>
+            <label><input type="radio" name="q2" value="NGINX" /> NGINX</label><br>
+            <label><input type="radio" name="q2" value="IIS" /> IIS</label>
+        </div>
 
-    <!-- Multiple Choice Question 3 -->
-    <div class="question">
-        <p>4. Which protocol is used for unsecure web communication?</p>
-        <label><input type="radio" name="q3" value="HTTP" /> HTTP</label><br>
-        <label><input type="radio" name="q3" value="HTTPS" /> HTTPS</label><br>
-        <label><input type="radio" name="q3" value="SSH" /> SSH</label>
-    </div>
-    
-    <!-- Multi-selection question -->
-    <div class="question">
-        <p>5. Select all that are security best practices:</p>
-        <label><input type="checkbox" id="sec1" value="Enable HTTPS" /> Enable HTTPS</label><br>
-        <label><input type="checkbox" id="sec2" value="Disable all modules" /> Disable all modules</label><br>
-        <label><input type="checkbox" id="sec3" value="Use WAF" /> Use WAF</label><br>
-        <label><input type="checkbox" id="sec4" value="Use public FTP" /> Use public FTP</label><br>
-    </div>
+        <!-- Multiple Choice Question 3 -->
+        <div class="question">
+            <p>4. Which protocol is used for secure web communication?</p>
+            <label><input type="radio" name="q3" value="HTTP" /> HTTP</label><br>
+            <label><input type="radio" name="q3" value="HTTPS" /> HTTPS</label><br>
+            <label><input type="radio" name="q3" value="FTP" /> FTP</label>
+        </div>
+        
+        <!-- Multi-selection question -->
+        <div class="question">
+            <p>5. Select all that are security best practices:</p>
+            <label><input type="checkbox" id="sec1" value="Enable HTTPS" /> Enable HTTPS</label><br>
+            <label><input type="checkbox" id="sec2" value="Disable all modules" /> Disable all modules</label><br>
+            <label><input type="checkbox" id="sec3" value="Use WAF" /> Use WAF</label><br>
+            <label><input type="checkbox" id="sec4" value="Use public FTP" /> Use public FTP</label><br>
+        </div>
 
-    <br>
-    <button type="submit">Submit</button>
-    <button type="button" onclick="resetQuiz()">Reset</button> <!-- Reset button -->
-</form>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
 
-<div id="results" style="margin-top:20px;"></div>
+    <div id="results" style="margin-top:20px;"></div>
 </section>
 
 <script>
@@ -83,27 +82,29 @@ function submitQuiz() {
     // Check multiple choice questions
     if (document.querySelector('input[name="q1"]:checked')?.value === "443") score++;
     if (document.querySelector('input[name="q2"]:checked')?.value === "NGINX") score++;
-    if (document.querySelector('input[name="q3"]:checked')?.value === "HTTP") score++;
+    if (document.querySelector('input[name="q3"]:checked')?.value === "HTTPS") score++;
 
     // Check multi-selection question
     const sec1 = document.getElementById('sec1').checked;
-    const sec3 = document.getElementById('sec3').checked;
+    const sec3 = document.getElementById('sec3').checked
     const sec4 = document.getElementById('sec4').checked;
-    
     if (sec1 && sec3 && sec4) {
         score++;
     }
 
-    // Show results
+    // Show results and correct answers
     let resultDiv = document.getElementById('results');
     resultDiv.innerHTML = "Your score: " + score + " out of 5<br>";
 
+    // Determine pass/fail message
     if (score >= 3) {
-        resultDiv.innerHTML += '<span style="color:green;">You Passed!</span>';
+        resultDiv.innerHTML += '<span style="color: green;">You Passed!</span>';
     } else {
-        resultDiv.innerHTML += '<span style="color:red;">Try Again!</span>';
+        resultDiv.innerHTML += '<span style="color: red;">Try Again!</span>';
     }
-      resultDiv.innerHTML += "<h3>Correct Answers:</h3>" + 
+
+    // Display correct answers
+    resultDiv.innerHTML += "<h3>Correct Answers:</h3>" + 
     "<ul>" +
     "<li>1. The protocol used for secure web traffic is <strong>HTTPS</strong>.</li>" +
     "<li>2. The port used by default for HTTPS is <strong>443</strong>.</li>" +
@@ -114,14 +115,7 @@ function submitQuiz() {
 
     return false; // prevent page reload
 }
-
-function resetQuiz() {
-    // Reset the form
-    document.getElementById("quiz").reset();
-    document.getElementById('results').innerHTML = ""; // Clear results
-}
 </script>
 
 </body>
 </html>
-
