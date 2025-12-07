@@ -68,6 +68,9 @@
         <button type="submit">Submit</button>
     </form>
 
+    <br>
+<button type="button" onclick="resetQuiz()">Reset Quiz</button>
+
     <div id="results" style="margin-top:20px;"></div>
 </section>
 
@@ -114,6 +117,12 @@ function submitQuiz() {
     "</ul>";
 
     return false; // prevent page reload
+}
+
+function resetQuiz() {
+    // Reset the form
+    document.getElementById("quiz").reset();
+    document.getElementById('results').innerHTML = ""; // Clear results
 }
 </script>
 
