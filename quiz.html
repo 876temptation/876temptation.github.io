@@ -103,6 +103,14 @@ function submitQuiz() {
     } else {
         resultDiv.innerHTML += '<span style="color:red;">Try Again!</span>';
     }
+      resultDiv.innerHTML += "<h3>Correct Answers:</h3>" + 
+    "<ul>" +
+    "<li>1. The protocol used for secure web traffic is <strong>HTTPS</strong>.</li>" +
+    "<li>2. The port used by default for HTTPS is <strong>443</strong>.</li>" +
+    "<li>3. The server known for high performance is <strong>NGINX</strong>.</li>" +
+    "<li>4. The protocol used for secure web communication is <strong>HTTPS</strong>.</li>" +
+    "<li>5. Security best practices include <strong>Enabling HTTPS</strong>, <strong>Using WAF</strong>, and more.</li>" +
+    "</ul>";
 
     return false; // prevent page reload
 }
@@ -116,3 +124,4 @@ function resetQuiz() {
 
 </body>
 </html>
+
