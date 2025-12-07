@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Current Landscape & Future Trends</title>
+  <title>History & Basics of Web Servers</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <header>
-  <h1>Current Landscape & Future Trends of Web Servers</h1>
+  <h1>History & Basics of Web Servers</h1>
   <nav class="menu">
     <a href="index.html" class="active">Home</a>
     <a href="subtopic1.html">History & Basics</a>
@@ -23,17 +23,46 @@
 
 
 <section>
-  <h2>Current Web Server Technologies</h2>
-  <p>Today, web servers include popular open-source solutions such as Apache, NGINX, LiteSpeed, and Caddy. Cloud providers also offer managed web hosting, load balancers, and CDN services (e.g., Cloudflare, AWS, Azure).</p>
+  <h2>History of Web Servers</h2>
+  <p>Web servers have evolved alongside the web itself. The first web server and browser were created by Tim Berners-Lee at CERN, demonstrating the concept of networked hypertext document retrieval. As the web grew, more robust and specialized web server software was developed:</p>
+  <ul>
+    <li><strong>Apache HTTP Server</strong>: Released in the mid-1990s, it became the de facto standard due to its modular architecture.</li>
+    <li><strong>Microsoft IIS</strong>: Dominated enterprise environments on Windows servers.</li>
+    <li><strong>NGINX</strong>: Introduced a high-performance, event-driven architecture suitable for high concurrency scenarios.</li>
+  </ul>
 
-  <h2>Operational Concerns</h2>
-  <p>Performance metrics such as requests per second, latency, and throughput are crucial for efficiency. Techniques like caching, TLS offloading, and HTTP/2 multiplexing improve performance. Security measures include HTTPS enforcement, Web Application Firewalls (WAFs), and DDoS protection.</p>
+  <h2>Basics of How Web Servers Work</h2>
+  <p>A web server mainly listens on ports 80 (HTTP) and 443 (HTTPS), accepting incoming requests, resolving resources (files or handlers), and returning responses. The core request-response loop involves:</p>
+  <ul>
+    <li>Listening for incoming network connections</li>
+    <li>Mapping requests to resources</li>
+    <li>Sending back status, headers, and message body</li>
+  </ul>
+  <p>Modern web servers support advanced features such as:</p>
+  <ul>
+    <li>TLS encryption (HTTPS)</li>
+    <li>Virtual hosting</li>
+    <li>Caching and compression</li>
+    <li>Proxy and load balancing functions</li>
+  </ul>
+  
+  <h2>Role of Cloud Hosting and CDNs</h2>
+  <p>Modern websites rarely rely on a single physical server. Instead, they use 
+  <strong>cloud hosting</strong> platforms like AWS, Azure, and Google Cloud, which provide 
+  scalable infrastructure and managed services. To improve speed and reliability, 
+  many sites integrate <strong>Content Delivery Networks (CDNs)</strong> such as Cloudflare, 
+  Akamai, and Amazon CloudFront. CDNs distribute content across global servers, 
+  ensuring faster load times and reduced latency for users worldwide.</p>
+
+  <p>In 2025, the CDN market is valued at over <strong>$26 billion</strong> and projected to 
+  grow rapidly as streaming, gaming, and e-commerce expand. This trend highlights 
+  how performance and security are now inseparable from web server technology.</p>
+
+</section>
 
 <footer id="footer">
-  <p>Currrent Landscape & Future Trends of Web Servers. <a href="index.html" style="color:lightblue;">Back to Home</a></p>
+  <p>Web server history and basics. <a href="index.html" style="color:lightblue;">Back to Home</a></p>
 </footer>
 
 </body>
 </html>
-
-
