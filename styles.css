@@ -112,6 +112,28 @@ button {
     box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 }
 
+/* Resource page link styling */
+section ul li a {
+  color: rgb(143, 209, 231);        /* makes links light blue (dark blue was difficult to read)*/
+}
+
+/* Table styles for data presentation in subtopic1.html */
+table {
+  width: 100%;
+  border-collapse: collapse;   /* ensures borders don't double */
+  margin-top: 15px;
+}
+
+th, td {
+  padding: 12px;
+  border: 2px solid #007ACC;   /* thicker, colored border */
+  text-align: center;         
+}
+
+th {
+  background-color: #163654;   /* dark header background */
+  color: #ffffff;              /* white text for contrast */
+}
 
 
 
