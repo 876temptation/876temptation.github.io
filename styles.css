@@ -4,11 +4,12 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #000000;
     color: #ffffff;
-    background-image: url('paper3.jpg')
-    background-size: cover;
+    background-image: url('paper3.jpg'); /* Update the image path */
+    background-size: cover; 
     background-position: center; 
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
 }
 
 /* Header styling */
@@ -110,6 +111,7 @@ button {
     background-color: #fff;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 }
+
 
 
 
