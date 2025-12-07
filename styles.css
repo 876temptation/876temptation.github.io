@@ -1,102 +1,113 @@
-/* Body styles */
+/* General body styles */
 body {
-
-  background-image: url('paper3.jpg');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: #000000;
-  color: #ffffff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #ffffff;
+    background-image: url('your-wallpaper.jpg'); /* Update the image path */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 /* Header styling */
 header {
-  padding: 20px;
-  text-align: center;
+    padding: 20px;
+    text-align: center;
 }
 
 /* Main title */
 h1 {
-  color: #fff;
+    color: #fff;
 }
 
 /* Main menu styling */
 nav.menu {
-  display: flex;
-  justify-content: center;
-  background-color: #163654;
-  padding: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #163654;
+    padding: 10px;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
 }
 
-/* Links in menu - class selector */
+/* Links in menu */
 nav.menu a {
-  color: hsl(0, 0%, 100%);
-  margin: 0 15px;
-  padding: 8px 12px;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background 0.5s, color 0.5s;
+    color: white; /* Set link color to white */
+    margin: 0 15px;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.5s;
 }
 
-/* Hover effect on links - pseudo-class */
+/* Hover effect for links */
 nav.menu a:hover {
-  background-color: #09738d;
-  color: #91cff8;
+    background-color: #09738d;
 }
 
 /* Content section styles */
 section {
-  padding: 20px;
-  max-width: 960px;
-  margin: auto;
+    padding: 20px;
+    max-width: 960px;
+    margin: auto;
 }
 
 /* Headings for pages */
 h2 {
-  color: #007ACC;
+    color: #007ACC;
 }
 
-/* Lists styles */
-ul {
-  list-style-type: disc;
-  padding-left: 20px;
+/* Responsive Images */
+img {
+    width: 100%; /* Responsive images */
+    height: auto; 
 }
 
-/* Table styles for data presentation */
+/* Responsive Tables */
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
+    width: 100%;
+    overflow-x: auto;
 }
 
-th, td {
-  padding: 10px;
-  border: 1px solid #ccc;
-  text-align: left;
+/* Buttons */
+button {
+    padding: 10px 20px; /* Larger button for touch */
+    width: 100%; /* Full width for mobile */
 }
 
-th {
-  background-color: #e2e2e2;
+/* Media Queries */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Smaller font for mobile */
+        padding: 10px;
+    }
+    nav.menu {
+        flex-direction: column; /* Stacks menu items vertically */
+    }
 }
 
-/* Footer styles for notes and links */
+@media (min-width: 601px) and (max-width: 1024px) {
+    nav.menu {
+        display: flex; /* Horizontal layout for larger phones */
+    }
+}
+
+/* Footer styles */
 #footer {
-  text-align: center;
-  padding: 15px;
-  background-color: #163654;
-  color: #fff;
-  margin-top: 30px;
+    text-align: center;
+    padding: 15px;
+    background-color: #163654;
+    color: #fff;
+    margin-top: 30px;
 }
 
 /* Utility class for card layout if needed */
 .card {
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 4px;
-  background-color: #fff;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 }
